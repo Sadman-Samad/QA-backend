@@ -26,7 +26,7 @@ A Node.js/Express backend for an AI-powered document question-answering system. 
 - Node.js (v16 or higher)
 - MongoDB (cloud)
 - Cohere API account
-- npm or yarn
+- npm
 
 ## Installation
 
