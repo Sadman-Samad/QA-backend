@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "cohere-ai": "^6.2.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "express-fileupload": "^1.5.2",
+    "langchain": "^0.3.31",
+    "mammoth": "^1.10.0",
+    "mongoose": "^8.17.2",
+    "pdf-parse": "^1.1.1"
+  }
+}
