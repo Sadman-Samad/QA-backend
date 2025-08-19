@@ -32,5 +32,5 @@ A Node.js/Express backend for an AI-powered document question-answering system. 
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd document-qa-app/server
+git clone [<repository-url>](https://github.com/Sadman-Samad/QA-backend)
+cd document-QA-backend/server
