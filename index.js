@@ -6,7 +6,10 @@ const connectDB = require('./config/db');
 const apiRoutes = require('./routes/apiRoutes');
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+}));
 app.use(express.json());
 app.use(fileUpload());
 app.use(express.static('public'));

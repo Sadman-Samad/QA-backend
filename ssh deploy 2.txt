@@ -1,0 +1,73 @@
+SSH VM MERN Deployment – Quick Steps
+
+Connect to VM
+
+ssh username@VM_PUBLIC_IP
+
+
+Update & Install Essentials
+
+sudo apt update && sudo apt upgrade -y
+sudo apt install git curl build-essential -y
+
+
+Install Node.js
+
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt install -y nodejs
+node -v
+npm -v
+
+
+Install MongoDB
+
+sudo apt install -y mongodb
+sudo systemctl enable --now mongodb
+
+
+Clone Project
+
+git clone <repo-url>
+cd <project-folder>
+
+
+Backend Setup
+
+npm install
+# In server file
+app.listen(PORT, '0.0.0.0', () => console.log(`Server running on ${PORT}`));
+node index.js
+curl http://localhost:5000
+
+
+Frontend Setup (React)
+
+cd frontend
+npm install
+npm run build
+# Serve build via backend
+app.use(express.static(path.join(__dirname, "../frontend/build")));
+app.get("*", (req,res)=>res.sendFile(path.join(__dirname,"../frontend/build","index.html")));
+
+
+Keep Server Running (PM2)
+
+sudo npm install -g pm2
+pm2 start index.js --name project
+pm2 save
+pm2 startup
+
+
+Optional: ngrok Public Access
+
+npx ngrok authtoken <YOUR_AUTHTOKEN>
+npx ngrok http 5000
+
+
+Tips
+
+Test locally: curl http://localhost:5000
+
+Use 0.0.0.0 for external access
+
+Keep VM secure: firewall, SSH keys
