@@ -14,7 +14,9 @@ app.use(express.json());
 app.use(fileUpload());
 app.use(express.static('public'));
 
-
+app.get('/', (req, res) => {
+    res.send('Hello, Express app is working!');
+});
 connectDB();
 app.use('/api', apiRoutes);
 
